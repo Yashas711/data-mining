@@ -1,0 +1,48 @@
+/******************************************************************************
+
+                            DATA MINING-
+
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+        Scanner sc=new Scanner(System.in);
+        String[] name = new String[5];
+        String[] r = new String[100];
+        int c=0;
+         int[] age = new int[5];
+         String[][] hb = new String[5][5];
+         
+        for(int i=0;i<5;i++)
+        {
+             System.out.println(i+"Enter name");   
+             name[i]=sc.next();
+             System.out.println("Age");
+             age[i]=sc.nextInt();
+             System.out.println("Hobby-");  
+             for(int j=0;j<5;j++)
+             hb[i][j]=sc.next();
+        }
+        System.out.println("enter the parameter necessary");
+        String s=sc.next();
+        for(int i=0;i<5;i++)
+        {
+            for(int j=0;j<5;j++)
+            {
+                if(hb[i][j].equals(s))
+                {
+                    c++;
+                    r[c]=name[i];
+                    
+                }
+            }
+        }
+        System.out.println("parameter count of "+s+" = "+c);
+        System.out.println("ratio of people intrested in "+s+" is "+(float)c/name.length+"%");
+        
+    
+	}
+}
